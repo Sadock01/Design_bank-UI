@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:financial_bank/const/const.dart';
 import 'package:financial_bank/pages/acceuil/acceuil_mobile_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,12 +13,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Widget content = const AcceuilMobileScreen();
-  int currentIndex = 0;
+  int currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [],
+        children: [content],
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.white,
@@ -31,8 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
               child: IconButton(
                 onPressed: () {
                   setState(() {
-                    currentIndex == index;
-                    content == Const.bottomList[index]["screen"];
+                    currentIndex = index;
+                    log("Valeur de 'screen' pour index $index: ${Const.bottomList[index]["screen"]}");
+
+                    content = (Const.bottomList[index]["screen"] as Widget?) ??
+                        const AcceuilMobileScreen(); 
+                    log("Nouvel écran : $content");
                   });
                 },
                 icon: currentIndex == index

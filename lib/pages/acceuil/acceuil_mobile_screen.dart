@@ -10,6 +10,6 @@ class AcceuilMobileScreen extends StatefulWidget {
 class _AcceuilMobileScreenState extends State<AcceuilMobileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return  Container(child: Text("Acceuil"),);
   }
 }
