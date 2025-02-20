@@ -26,13 +26,13 @@ class Const {
      "label": "My Card"
     },
     {
-      'icon': Icon(Icons.settings,color: Colors.black.withValues(alpha: 0.5)),
+      'icon': Icon(Icons.confirmation_num_outlined,color: Colors.black.withValues(alpha: 0.5)),
      'active_color': const Icon(Icons.settings,color: Color.fromARGB(255, 255, 155, 0),),
      "screen": const TransactionMobileScreen(),
      "label": "Transaction"
     },
     {
-      'icon': Icon(Icons.person,color: Colors.black.withValues(alpha: 0.5)),
+      'icon': Icon(Icons.person_2_outlined,color: Colors.black.withValues(alpha: 0.5)),
      'active_color': const Icon(Icons.person_2_outlined,color: Color.fromARGB(255, 255, 155, 0),),
      "screen": const ProfileMobileScreen(),
      "label": "Profile"
