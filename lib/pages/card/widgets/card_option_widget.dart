@@ -10,32 +10,56 @@ class CardOptionWidget extends StatelessWidget {
       height: Const.screenHeight(context) * 0.07,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(15)),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Column(
-            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    border: Border.all(
+                        color: Theme.of(context).colorScheme.primary)),
+                child: Center(
+                  child: Icon(
+                    Icons.lock_clock_outlined,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+              ),
+              Text(
+                "Bloquer sa carte",
+                style: Theme.of(context)
+                    .textTheme
+                    .labelSmall!
+                    .copyWith(color: Theme.of(context).colorScheme.primary),
+              )
+            ],
+          ),
+          SizedBox(width: 10),
+          Column(
             children: [
               Container(
                 margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
                     border: Border.all(
-                        color: Theme.of(context).colorScheme.secondary)),
-                child: Icon(
-                  Icons.lock_clock_outlined,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                    border: Border.all(
-                        color: Theme.of(context).colorScheme.secondary)),
+                        color: Theme.of(context).colorScheme.primary)),
                 child: Icon(
                   Icons.visibility_outlined,
                   color: Theme.of(context).colorScheme.primary,
                 ),
               ),
+              SizedBox(
+                  width: Const.screenWidth(context) * 0.22,
+                  child: Text(
+                    "Afficher les informations",
+                    style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                        color: Theme.of(context).colorScheme.primary,
+                        overflow: TextOverflow.ellipsis),
+                  ))
             ],
           )
         ],

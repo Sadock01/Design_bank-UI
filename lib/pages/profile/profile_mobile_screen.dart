@@ -25,11 +25,13 @@ class _ProfileMobileScreenState extends State<ProfileMobileScreen> {
               style: Theme.of(context).textTheme.labelSmall,
             ),
             Container(
+              padding: EdgeInsets.symmetric(horizontal: 5),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10), color: Colors.green),
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  Icon(Icons.verified_user_outlined),
+                  Icon(Icons.verified_user_outlined,size: 10,),
                   Text(
                     "verified",
                     style: Theme.of(context).textTheme.labelSmall,
@@ -47,7 +49,7 @@ class _ProfileMobileScreenState extends State<ProfileMobileScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).colorScheme.secondary),
+                          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2)),
                       child: ListTile(
                         leading: Icon(Icons.add_card_outlined),
                         title: Text(
@@ -65,7 +67,7 @@ class _ProfileMobileScreenState extends State<ProfileMobileScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).colorScheme.secondary),
+                          color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2)),
                       child: ListTile(
                         leading: Icon(Icons.add_card_outlined),
                         title: Text(
@@ -75,7 +77,8 @@ class _ProfileMobileScreenState extends State<ProfileMobileScreen> {
                       ),
                     ),
                   ),
-                ),
+                ),SizedBox(height: 30),
+                Container(decoration: BoxDecoration(),)
               ],
             )
           ],

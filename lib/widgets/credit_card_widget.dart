@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class CreditCardWidget extends StatelessWidget {
@@ -6,7 +7,7 @@ class CreditCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 220,
+      height: 220,
         width: 350,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
         child: ClipRRect(
@@ -16,14 +17,14 @@ class CreditCardWidget extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Container(
-                  color: Colors.white70,
+                 color: Colors.orange,
                   child: Stack(
                     children: [
                       Positioned(
                         top: 16,
                         left: 16,
                         child: Image.asset(
-                          "assets/credit-card.png",
+                          "assets/images/credit-card.png",
                           height: 40,
                           color: Colors.white,
                         ),
@@ -32,7 +33,7 @@ class CreditCardWidget extends StatelessWidget {
                         top: 10,
                         left: 70,
                         child: Image.asset(
-                          "assets/wifi.png",
+                          "assets/images/wifi.png",
                           height: 50,
                           color: Colors.white,
                         ),
@@ -55,7 +56,7 @@ class CreditCardWidget extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  color: Theme.of(context).colorScheme.primary,
+               color: const Color.fromARGB(134, 255, 153, 0),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Row(

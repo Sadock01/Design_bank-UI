@@ -13,40 +13,58 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   Widget content = const AcceuilMobileScreen();
-  int currentIndex = 1;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [content],
-      ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.white,
-        elevation: 10,
-        shadowColor: Colors.black,
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 8,
-        child: Row(
-          children: List.generate(Const.bottomList.length, (index) {
-            return Container(
-              margin: index == 1 ? const EdgeInsets.only(right: 32) : null,
-              child: IconButton(
-                onPressed: () {
-                  setState(() {
-                    currentIndex = index;
-                    log("Valeur de 'screen' pour index $index: ${Const.bottomList[index]["screen"]}");
-
-                    content = (Const.bottomList[index]["screen"] as Widget?) ??
-                        const AcceuilMobileScreen(); 
-                    log("Nouvel écran : $content");
-                  });
-                },
-                icon: currentIndex == index
-                    ? Const.bottomList[index]["active_icon"]
-                    : Const.bottomList[index]["icon"],
-              ),
-            );
-          }),
+    return SafeArea(
+      child: Scaffold(
+         
+        body: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [content],
+          ),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: Colors.white,
+          elevation: 10,
+          shadowColor: Colors.black,
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 8,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: List.generate(Const.bottomList.length, (index) {
+              return Container(
+                    
+                margin: index == 1 ? const EdgeInsets.only(right: 32) : null,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(
+                      height: 25,
+                      child: IconButton(
+                        padding: EdgeInsets.zero,
+                        onPressed: () {
+                          setState(() {
+                            currentIndex = index;
+                            log("Valeur de 'screen' pour index $index: ${Const.bottomList[index]["screen"]}");
+                            
+                            content = (Const.bottomList[index]["screen"] as Widget?) ??
+                                const AcceuilMobileScreen(); 
+                            log("Nouvel écran : $content");
+                          });
+                        },
+                        icon: currentIndex == index
+                            ? Const.bottomList[index]["active_icon"]
+                            : Const.bottomList[index]["icon"],
+                      ),
+                    ),
+                    Text(Const.bottomList[index]["label"],style: Theme.of(context).textTheme.labelSmall!.copyWith(overflow: TextOverflow.ellipsis),)
+                  ],
+                ),
+              );
+            }),
+          ),
         ),
       ),
     );

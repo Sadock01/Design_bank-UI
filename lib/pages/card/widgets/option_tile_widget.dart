@@ -13,17 +13,22 @@ class OptionTileWidget extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: leading,
-      title: Text(
-        title,
-        style: Theme.of(context).textTheme.labelMedium,
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),
+          border: Border.all(color: Theme.of(context).colorScheme.primary)),
+      child: ListTile(
+        leading: leading,
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.labelMedium,
+        ),
+        subtitle: Text(
+          subtitle,
+          style: Theme.of(context).textTheme.labelSmall,
+        ),
+        trailing: trailing,
       ),
-      subtitle: Text(
-        subtitle,
-        style: Theme.of(context).textTheme.labelMedium,
-      ),
-      trailing: trailing,
     );
   }
 }
