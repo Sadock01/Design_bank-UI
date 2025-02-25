@@ -15,23 +15,29 @@ class _CardMobileScreenState extends State<CardMobileScreen> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
           CreditCardWidget(),
           Text(
             "Virtuelle",
-            style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Theme.of(context).colorScheme.primary),
+            style: Theme.of(context)
+                .textTheme
+                .labelMedium!
+                .copyWith(color: Theme.of(context).colorScheme.primary),
           ),
           SizedBox(height: 10),
-          SizedBox(height: Const.screenHeight(context)*0.15,child: CardOptionWidget()),
+          SizedBox(
+              height: Const.screenHeight(context) * 0.15,
+              child: CardOptionWidget()),
           SizedBox(height: 10),
           OptionTileWidget(
             leading: Icon(Icons.speed),
             subtitle: "Limites d'achat et de retraits quotidients",
             title: "Spending limits",
             trailing: Icon(Icons.arrow_forward_ios),
-          ),OptionTileWidget(
+          ),
+          OptionTileWidget(
             leading: Icon(Icons.settings_outlined),
             subtitle: "Utilisation de la carte",
             title: "Settings",

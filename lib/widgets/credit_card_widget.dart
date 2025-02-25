@@ -1,4 +1,4 @@
-
+import 'package:financial_bank/const/const.dart';
 import 'package:flutter/material.dart';
 
 class CreditCardWidget extends StatelessWidget {
@@ -7,8 +7,8 @@ class CreditCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 220,
-        width: 350,
+        height: Const.screenHeight(context) * 0.25,
+        width: Const.screenWidth(context) * 0.9,
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
@@ -17,7 +17,7 @@ class CreditCardWidget extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Container(
-                 color: Colors.orange,
+                  color: Colors.orange,
                   child: Stack(
                     children: [
                       Positioned(
@@ -56,7 +56,7 @@ class CreditCardWidget extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-               color: const Color.fromARGB(134, 255, 153, 0),
+                  color: const Color.fromARGB(134, 255, 153, 0),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Row(
@@ -74,13 +74,15 @@ class CreditCardWidget extends StatelessWidget {
                           children: [
                             CircleAvatar(
                               radius: 15,
-                              backgroundColor: Colors.white.withValues(alpha: 0.8),
+                              backgroundColor:
+                                  Colors.white.withValues(alpha: 0.8),
                             ),
                             Transform.translate(
                               offset: const Offset(-10, 0),
                               child: CircleAvatar(
                                 radius: 15,
-                                backgroundColor: Colors.white.withValues(alpha: 0.8),
+                                backgroundColor:
+                                    Colors.white.withValues(alpha: 0.8),
                               ),
                             )
                           ],

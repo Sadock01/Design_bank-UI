@@ -19,11 +19,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
          
-        body: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [content],
-          ),
+        body: Column(
+          children: [content],
         ),
         bottomNavigationBar: BottomAppBar(
           color: Colors.white,

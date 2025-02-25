@@ -12,9 +12,16 @@ class TransactionOptionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(border: Border.all(color: Theme.of(context).colorScheme.primary),
-        borderRadius: BorderRadius.circular(5),
-      ),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey,
+              spreadRadius: 0.5,
+              blurRadius: 2,
+            )
+          ]),
       child: ListTile(
         trailing: Icon(
           Icons.arrow_forward,
@@ -32,7 +39,10 @@ class TransactionOptionWidget extends StatelessWidget {
             padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.5)),
+                color: Theme.of(context)
+                    .colorScheme
+                    .primary
+                    .withValues(alpha: 0.2)),
             child: leading),
       ),
     );
