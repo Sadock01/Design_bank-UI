@@ -17,13 +17,13 @@ class Const {
       'icon': Icon(Icons.home,color: Colors.black.withValues(alpha: 0.5)),
      'active_icon': const Icon(Icons.home,color: Color.fromARGB(255, 255, 155, 0),),
      "screen": const AcceuilMobileScreen(),
-     "label": "home"
+     "label": "Acceuil"
     },
     {
       'icon': Icon(Icons.credit_card,color: Colors.black.withValues(alpha: 0.5)),
      'active_icon': const Icon(Icons.credit_card,color: Color.fromARGB(255, 255, 155, 0),),
      "screen": const CardMobileScreen(),
-     "label": "My Card"
+     "label": "Ma carte"
     },
     {
       'icon': Icon(Icons.confirmation_num_outlined,color: Colors.black.withValues(alpha: 0.5)),
@@ -35,7 +35,7 @@ class Const {
       'icon': Icon(Icons.person_2_outlined,color: Colors.black.withValues(alpha: 0.5)),
      'active_icon': const Icon(Icons.person_2_outlined,color: Color.fromARGB(255, 255, 155, 0),),
      "screen": const ProfileMobileScreen(),
-     "label": "Profile"
+     "label": "Profil"
     }
   ];
 }

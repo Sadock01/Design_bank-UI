@@ -47,7 +47,7 @@ class _TransactionMobileScreenState extends State<TransactionMobileScreen> {
                 SizedBox(height: 12),
                 SizedBox(
                   height: 50,
-                  width: Const.screenWidth(context) * 0.75,
+                  width: Const.screenWidth(context) ,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         padding:
@@ -69,7 +69,7 @@ class _TransactionMobileScreenState extends State<TransactionMobileScreen> {
                             "Ajouter un bénéficiaire",
                             style: Theme.of(context)
                                 .textTheme
-                                .labelSmall!
+                                .labelMedium!
                                 .copyWith(color: Colors.white),
                           )
                         ],
@@ -77,7 +77,7 @@ class _TransactionMobileScreenState extends State<TransactionMobileScreen> {
                 ),
                 SizedBox(height: 15),
                 SizedBox(
-                  width: Const.screenWidth(context) * 0.75,
+                  width: Const.screenWidth(context) ,
                   height: 50,
                   child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -97,7 +97,7 @@ class _TransactionMobileScreenState extends State<TransactionMobileScreen> {
                           SizedBox(width: 10),
                           Text(
                             "Gérer les bénéficiaires",
-                            style: Theme.of(context).textTheme.labelSmall,
+                            style: Theme.of(context).textTheme.labelMedium,
                           )
                         ],
                       )),
